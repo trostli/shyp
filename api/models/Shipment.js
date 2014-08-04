@@ -34,7 +34,7 @@ module.exports = {
         values.destinationLongitude = res[0]["longitude"]
         next();
         if (err) {
-          console.log("Error! " + err)
+          console.log(err)
         }
       });
     } else {

@@ -12,7 +12,6 @@ var geocoder = require('node-geocoder').getGeocoder(geocoderProvider, httpAdapte
 module.exports = {
 
   attributes: {
-
     currentAddress: 'string',
     currentLatitude: 'float',
     currentLongitude: 'float',

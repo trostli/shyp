@@ -7,18 +7,7 @@
  */
 var geocoderProvider = 'google';
 var httpAdapter = 'http';
-// optional
-// var extra = {
-//     apiKey: 'AIzaSyBo_tsvoKmNgXKvSDVuhRBOLsaeEdGh0L8', // for map quest
-//     formatter: null         // 'gpx', 'string', ...
-// };
-
 var geocoder = require('node-geocoder').getGeocoder(geocoderProvider, httpAdapter);
-
-// Using callback
-geocoder.geocode('Fornino, 187 Bedford Ave, Brooklyn, NY 11211', function(err, res) {
-    console.log(res);
-});
 
 module.exports = {
 
@@ -37,7 +26,6 @@ module.exports = {
     packageHeight: 'float',
     packageWidth: 'float',
     cost: 'integer'
-
   },
 
  beforeCreate: function(values, next) {

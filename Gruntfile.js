@@ -409,6 +409,17 @@ module.exports = function (grunt) {
         // When assets are changed:
         tasks: ['compileAssets', 'linkAssets']
       }
+    },
+
+    mocha_istanbul: {
+      coverage: {
+        src: 'test', // the folder, not the files
+        options: {
+          coverageFolder: 'coverage',
+          mask: '**/*.spec.js',
+          root: 'api/'
+        }
+      }
     }
   });
 
@@ -481,4 +492,14 @@ module.exports = function (grunt) {
   //     console.error(filepath + ' has ' + action + ', but could not signal the Sails.js server: ' + e.message);
   //   });
   // });
+
+  // Adds "grunt-mocha-istanbul" npm task
+  grunt.loadNpmTasks('grunt-mocha-istanbul');
+
+  // Adding test task enabling "grunt test" command
+  grunt.registerTask('test', [
+    'mocha_istanbul:coverage'
+  ]);
 };
+
+

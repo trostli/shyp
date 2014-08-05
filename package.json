@@ -22,7 +22,7 @@
   "license": "",
   "devDependencies": {
     "assert": "^1.1.1",
-    "grunt-mocha-istanbul": "^1.5.0",
+    "grunt-mocha-test": "^0.11.0",
     "mocha": "^1.21.3",
     "sinon": "^1.10.3"
   }

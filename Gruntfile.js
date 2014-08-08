@@ -415,9 +415,23 @@ module.exports = function (grunt) {
       test: {
         options: {
           reporter: 'spec',
-          require: 'coffee-script/register'
+          require: [
+          'coffee-script/register',
+          'coverage/blanket'
+          ]
         },
-        src: ['test/**/*.spec.js']
+        src: ['test/**/*.coffee']
+      },
+      coverage: {
+        options: {
+          reporter: 'html-cov',
+          // use the quiet flag to suppress the mocha console output
+          quiet: true,
+          // specify a destination file to capture the mocha
+          // output (the quiet option does not suppress this)
+          captureFile: 'coverage.html'
+        },
+        src: ['test/**/*.coffee']
       }
     }
   });

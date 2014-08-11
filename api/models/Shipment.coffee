@@ -10,7 +10,7 @@ geocoderProvider = 'google'
 httpAdapter = 'http'
 geocoder = require('node-geocoder').getGeocoder(geocoderProvider, httpAdapter)
 
-module.exports =
+Shipment =
   attributes:
     currentAddress: "string"
     currentLatitude: "float"
@@ -25,6 +25,8 @@ module.exports =
     packageHeight: "float"
     packageWidth: "float"
     cost: "integer"
+    user:
+      model: 'User'
 
   beforeCreate: (values, next) ->
     if not values.destinationLatitude or not values.destinationLongitude
@@ -38,3 +40,5 @@ module.exports =
           next()
     else
       next()
+
+module.exports = Shipment

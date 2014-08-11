@@ -2,10 +2,12 @@
 sinon = require("sinon")
 # assert = require("assert")
 wolfpack = require("wolfpack")
+s = require("../../api/models/Shipment")
+console.log(s)
 
 describe "The Shipment Model", ->
 
-  Shipment = wolfpack("api/models/Shipment")
+  Shipment = wolfpack(s)
   callback = sinon.stub()
 
   beforeEach ->

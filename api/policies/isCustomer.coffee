@@ -1,7 +1,7 @@
 module.exports = (req, res, next) ->
 
   # User is allowed, proceed to controller
-  if req.session.user && req.session.user.tech
+  if req.session.user && req.session.user.role == "customer"
     next()
 
   # User is not allowed

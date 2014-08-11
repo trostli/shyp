@@ -35,6 +35,7 @@ module.exports =
     User.signup
       name: req.param("name")
       email: req.param("email")
+      role: req.param("role")
       password: req.param("password")
     , (err, user) ->
 

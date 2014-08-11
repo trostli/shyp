@@ -21,15 +21,10 @@ module.exports =
     password:
       type: "string"
       required: true
-    admin:
-      type: "boolean"
-      default: false
-    tech:
-      type: "boolean"
-      default: false
-    driver:
-      type: "boolean"
-      default: false
+    role:
+      type: "string"
+      required: true
+
     # shipments:
     #   collection: "Shipment"
 
@@ -52,6 +47,7 @@ module.exports =
       name: inputs.name
       email: inputs.email
       password: inputs.password
+      role: inputs.role
     ).exec cb
 
   attemptLogin: (inputs, cb) ->

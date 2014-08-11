@@ -10,7 +10,7 @@ geocoderProvider = 'google'
 httpAdapter = 'http'
 geocoder = require('node-geocoder').getGeocoder(geocoderProvider, httpAdapter)
 
-Shipment =
+module.exports =
   attributes:
     currentAddress: "string"
     currentLatitude: "float"
@@ -40,5 +40,3 @@ Shipment =
           next()
     else
       next()
-
-module.exports = Shipment

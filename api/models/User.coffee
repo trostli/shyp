@@ -5,21 +5,22 @@
 #  * @description :: A short summary of how this model works and what it represents.
 #  * @docs		:: http://sailsjs.org/#!documentation/models
 #  */
+bcrypt = require("bcrypt")
 
-User =
+module.exports =
   schema: true
 
   attributes:
-    username:
-      type: "string"
+    email:
+      type: "email"
       unique: true
       required: true
-    email:
+    name:
       type: "string"
-      unique: true
-    passports:
-      collection: 'Passport'
-      via: 'user'
+      required: true
+    password:
+      type: "string"
+      required: true
     admin:
       type: "boolean"
       default: false
@@ -31,6 +32,7 @@ User =
       default: false
     # shipments:
     #   collection: "Shipment"
+
     # Override toJSON method to remove password from API
     toJSON: ->
       obj = this.toObject()
@@ -38,7 +40,6 @@ User =
       return obj
 
   beforeCreate: (attrs, next) ->
-    bcrypt = require("bcrypt")
     bcrypt.genSalt 10, (err, salt) ->
       return next(err)  if err
       bcrypt.hash attrs.password, salt, (err, hash) ->
@@ -46,4 +47,14 @@ User =
         attrs.password = hash
         next()
 
-module.exports = User
+  signup: (inputs, cb) ->
+    User.create(
+      name: inputs.name
+      email: inputs.email
+      password: inputs.password
+    ).exec cb
+
+  attemptLogin: (inputs, cb) ->
+    User.findOne(
+      email: inputs.email
+    ).exec cb

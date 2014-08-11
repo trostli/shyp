@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shyp HQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+
+  <body>
+
+    <h1>Welcome to Shyp</h1>
+
+    <% if (req.session.me) { %>
+    <a href="/logout">Logout</a>
+    <% } else { %>
+    <a href="/login">Login</a> | <a href="/signup">Signup</a>
+    <% } %>
+
+
+    <!--SCRIPTS-->
+    
+    <!--SCRIPTS END-->
+  </body>
+</html>

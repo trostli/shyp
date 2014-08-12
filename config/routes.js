@@ -20,5 +20,6 @@ module.exports.routes = {
   'post /signup': 'UserController.signup',
   '/logout': 'UserController.logout',
 
-  'post /shipment/create': 'ShipmentController.create'
+  'post /shipment/create': 'ShipmentController.create',
+  '/shipment': 'ShipmentController.index'
 };

@@ -26,7 +26,7 @@ module.exports.policies = {
 
   ShipmentController: {
   	'*': 'isAuthenticated',
-  	index: 'canSeeShipments',
+  	index: 'isAuthenticated',
   	create: 'canCreateShipments',
   	showUserShipments: 'canShowShipment',
   	updateCurrentCoordinates: 'canUpdateCoordinates',

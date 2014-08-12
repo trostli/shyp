@@ -20,4 +20,5 @@ module.exports.routes = {
   'post /signup': 'UserController.signup',
   '/logout': 'UserController.logout',
 
+  'post /shipment/create': 'ShipmentController.create'
 };

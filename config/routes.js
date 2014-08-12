@@ -21,5 +21,6 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
 
   'post /shipment/create': 'ShipmentController.create',
+  'post /shipment/update': 'ShipmentController.update',
   '/shipment': 'ShipmentController.index'
 };

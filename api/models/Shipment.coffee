@@ -24,6 +24,7 @@ module.exports =
     packageLength: "float"
     packageHeight: "float"
     packageWidth: "float"
+    packageWeight: "float"
     cost: "integer"
     user:
       model: 'User'

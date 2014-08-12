@@ -19,19 +19,16 @@ module.exports.policies = {
   '*': true,
 
   UserController: {
-  	'*': 'isAuthenticated',
+  	'*': 'isAdmin',
   	login: true,
   	signup: true
   },
 
   ShipmentController: {
-  	'*': 'isAuthenticated',
+  	'*': false,
   	index: 'isAuthenticated',
   	create: 'canCreateShipments',
-  	showUserShipments: 'canShowShipment',
-  	updateCurrentCoordinates: 'canUpdateCoordinates',
-  	updatePackageSpecs: 'canUpdatePackageSpecs',
-  	edit: 'isAdmin',
+  	update: 'canUpdateShipment',
   	destroy: 'isAdmin'
   }
 

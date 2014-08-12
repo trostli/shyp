@@ -40,7 +40,7 @@ module.exports =
       bcrypt.hash attrs.password, salt, (err, hash) ->
         return next(err)  if err
         attrs.password = hash
-        next()
+        next(null, attrs)
 
   signup: (inputs, cb) ->
     User.create(

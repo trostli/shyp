@@ -32,11 +32,10 @@ module.exports =
     if not values.destinationLatitude or not values.destinationLongitude
       geocoder.geocode values.destinationAddress, (err, res) ->
         if err
-          console.log err
-          next()
+          next(err)
         else
           values.destinationLatitude = res[0]["latitude"]
           values.destinationLongitude = res[0]["longitude"]
-          next()
+          next(null, values)
 
-    next()
+    next(null, values)

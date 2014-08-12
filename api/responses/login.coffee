@@ -27,7 +27,7 @@ module.exports = login = (inputs) ->
         return res.redirect(inputs.invalidRedirect)
       else if match
         # "Remember" the user in the session
-        req.session.me = user.id
+        req.session.me = user
         return res.ok()  if req.wantsJSON or not inputs.successRedirect
         res.redirect inputs.successRedirect
       else

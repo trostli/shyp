@@ -24,9 +24,9 @@ module.exports =
     role:
       type: "string"
       required: true
-
-    # shipments:
-    #   collection: "Shipment"
+    shipments:
+      collection: "Shipment"
+      via: "user"
 
     # Override toJSON method to remove password from API
     toJSON: ->

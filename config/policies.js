@@ -26,11 +26,12 @@ module.exports.policies = {
 
   ShipmentController: {
   	'*': 'isAuthenticated',
-  	index: ['isDriver', 'isTech', 'isAdmin'],
-  	create: ['isCustomer', 'isAdmin'],
-  	showUserShipments: ['isCustomer', 'isAdmin'],
-  	updateCurrentCoordinates: ['isDriver', 'isAdmin'],
-  	updatePackageSpecs: ['isTech', 'isAdmin'],
+  	index: 'canSeeShipments',
+  	create: 'canCreateShipments',
+  	showUserShipments: 'canShowShipment',
+  	updateCurrentCoordinates: 'canUpdateCoordinates',
+  	updatePackageSpecs: 'canUpdatePackageSpecs',
+  	edit: 'isAdmin',
   	destroy: 'isAdmin'
   }
 

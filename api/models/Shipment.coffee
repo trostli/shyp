@@ -38,5 +38,5 @@ module.exports =
           values.destinationLatitude = res[0]["latitude"]
           values.destinationLongitude = res[0]["longitude"]
           next()
-    else
-      next()
+
+    next()
